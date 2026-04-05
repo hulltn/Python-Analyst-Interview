@@ -1,19 +1,19 @@
 import random
 import time
 
-symbols = ["🍒", "🍋", "🍊", "⭐", "💎"]
+symbols = ["@", "#", "$", "!", "*"]
 
 def spin():
     return [random.choice(symbols) for _ in range(3)]
 
 def show_spin():
     for _ in range(5):
-        print("🎰 Spinning...", end="\r")
-        time.sleep(0.2)
+        print("Spinning...", end="\r")
+        time.sleep(0.25)
 
 def check_win(result, bet):
     if result[0] == result[1] == result[2]:
-        if result[0] == "💎":
+        if result[0] == "@":
             return bet * 10
         return bet * 5
     elif len(set(result)) == 2:
@@ -21,7 +21,7 @@ def check_win(result, bet):
     return 0
 
 def main():
-    print("🎰 Welcome to Python Slots!")
+    print("Welcome to Slots! Now coded in Python!")
 
     balance = int(input("Enter starting balance: $"))
 
@@ -51,12 +51,12 @@ def main():
         winnings = check_win(result, bet)
 
         if winnings > 0:
-            print(f"🎉 You won ${winnings}!")
+            print(f"!!! You won ${winnings}!")
             balance += winnings
         else:
-            print("😢 You lost!")
+            print(":( You lost!")
 
-    print("💀 Game over!")
+    print("Dx Game over!")
 
 if __name__ == "__main__":
     main()
