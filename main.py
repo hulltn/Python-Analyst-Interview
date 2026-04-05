@@ -26,19 +26,19 @@ def main():
     balance = int(input("Enter starting balance: $"))
 
     while balance > 0:
-        print(f"\n💰 Balance: ${balance}")
+        print(f"\n Balance: ${balance}")
 
         try:
             bet = int(input("Enter your bet (0 to quit): "))
         except ValueError:
-            print("❌ Invalid input")
+            print("X Invalid input")
             continue
 
         if bet == 0:
             break
 
         if bet > balance:
-            print("❌ Not enough money!")
+            print("X Not enough money!")
             continue
 
         balance -= bet
